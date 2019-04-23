@@ -1,7 +1,8 @@
 (ns lazy-database.core
-  (:gen-class))
+  (:gen-class)
+  (:require [hugsql.core :as hugsql]))
 
 (defn -main
-  "I don't do a whole lot ... yet."
   [& args]
-  (println "Hello, World!"))
+  (hugsql/def-db-fns "test.sql")
+  (now "postgresql://postgres:mysecretpassword@localhost:54321/"))
