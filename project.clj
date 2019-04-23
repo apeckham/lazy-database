@@ -7,5 +7,9 @@
                  [com.layerware/hugsql "0.4.9"]
                  [org.postgresql/postgresql "42.2.5.jre7"]]
   :main ^:skip-aot lazy-database.core
+  :jvm-opts ["-Dcom.sun.management.jmxremote"
+             "-Dcom.sun.management.jmxremote.ssl=false"
+             "-Dcom.sun.management.jmxremote.authenticate=false"
+             "-Dcom.sun.management.jmxremote.port=43210"]
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
